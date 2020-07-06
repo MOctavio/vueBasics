@@ -1,0 +1,11 @@
+.md-card {
+    width: 320px;
+    height: fit-content;
+}
+
+.md-content {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    height: 100vh;
+}

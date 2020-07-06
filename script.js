@@ -1,3 +1,5 @@
+Vue.use(VueMaterial.default);
+
 const card = new Vue({
   el: "#card",
   data: {

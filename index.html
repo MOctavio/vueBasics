@@ -29,16 +29,34 @@
         <md-card>
           <md-card-header>
             <md-card-header-text>
-              <div class="md-title">Media card</div>
-              <div class="md-subhead">Medium size</div>
+              <md-field>
+                <label>Hero name</label>
+                <md-input v-model="newHero"></md-input>
+              </md-field>
             </md-card-header-text>
-
-            <md-card-media md-medium> </md-card-media>
           </md-card-header>
-
+          <md-card-content>
+            <md-field>
+              <label>Hero description</label>
+              <md-textarea v-model="newHeroDesc"></md-textarea>
+            </md-field>
+          </md-card-content>
           <md-card-actions>
-            <md-button>Action</md-button>
-            <md-button>Action</md-button>
+            <md-button v-on:click="addHero">Add Hero</md-button>
+          </md-card-actions>
+        </md-card>
+
+        <md-card md-with-hover v-for="(hero, index) in heroes">
+          <md-card-header>
+            <md-card-header-text>
+              <div class="md-title">{{ hero.title }}</div>
+            </md-card-header-text>
+          </md-card-header>
+          <md-card-content>
+            {{ hero.desc }}
+          </md-card-content>
+          <md-card-actions>
+            <md-button class="md-accent" v-on:click="deleteHero">Delete</md-button>
           </md-card-actions>
         </md-card>
       </md-content>

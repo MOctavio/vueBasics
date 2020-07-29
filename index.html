@@ -49,14 +49,20 @@
         <md-card md-with-hover v-for="(hero, index) in heroes">
           <md-card-header>
             <md-card-header-text>
-              <div class="md-title">{{ hero.title }}</div>
+              <div class="md-title">{{ hero.title | capitalize }}</div>
             </md-card-header-text>
           </md-card-header>
           <md-card-content>
-            {{ hero.desc }}
+            {{ hero.desc | capitalize }}
+            <br />
+            <a v-bind:href="`${hero.title} ${hero.desc}` | url" target="_blank">
+              Learn more about on Google.
+            </a>
           </md-card-content>
           <md-card-actions>
-            <md-button class="md-accent" v-on:click="deleteHero">Delete</md-button>
+            <md-button class="md-accent" v-on:click="deleteHero"
+              >Delete</md-button
+            >
           </md-card-actions>
         </md-card>
       </md-content>

@@ -27,5 +27,16 @@ const card = new Vue({
     deleteHero: function(index) {
       this.heroes.splice(index, 1);
     }
+  },
+  filters: {
+    capitalize: function(value) {
+      if (!value) return "";
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    },
+    url: function(value) {
+      if (!value) return "";
+      return `https://www.google.com/search?q=${value.toString()}`;
+    }
   }
 });
